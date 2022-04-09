@@ -294,6 +294,13 @@ a{
             flex-grow: 0;
         }
     }
+    @media (max-width: 486px) {
+        &-left {
+            &__info {
+                padding: 3rem 2.5rem 4rem 4.5rem;
+            }
+        }
+    }
 }
 
 // footer
