@@ -168,6 +168,9 @@
         display: flex;
         flex-direction: column;
         gap: 7rem;
+        @media (max-width: 486px) {
+            padding: 3rem;
+        }
         h3 {
             margin-top: 0;
         }
