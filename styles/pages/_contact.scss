@@ -9,6 +9,7 @@
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
     &__left {
+        
         .notice {
             margin-top: 2.4rem;
             @include paragraph;

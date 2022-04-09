@@ -381,6 +381,15 @@
             row-gap: 3.2rem;
         }
     }
+    @media (max-width: 376px) {
+        &-top {
+            &__left {
+                .h2heading {
+                    padding-right: 0;
+                }
+            }
+        }
+    }
 }
 
 // quote
