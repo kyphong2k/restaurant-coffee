@@ -1,0 +1,132 @@
+@use '../abstracts' as *;
+
+
+// menu
+.menu-top-1{
+display: grid;
+grid-template-columns: 1fr 1fr;
+// width: 100%;
+// padding: $pd-left-right;
+padding-top: 16rem;
+margin: 0 auto;
+max-width: 1280px;
+width: 100%;
+&__left{
+    .h2heading {
+        padding-right: 16rem;
+    }
+    .h5heading {
+        @include h5font;
+        margin-top: 3.2rem;
+    }
+}
+&__right{
+    display: flex;
+    align-items: center;
+    
+    p{
+        @include descText;
+        padding-left: 5.8rem;
+    }
+}
+@media (max-width: 740px) {
+    grid-template-columns: 1fr;
+    &__right {
+        p {
+            padding: 0;
+            margin-top: 3.2rem;
+        }
+    }
+}
+}
+
+// menu filter
+.all,.quafe-cake,.cocktails,.fast-food,.snacks,.coffee {
+    -webkit-animation: slide-down 2s ease-in;
+    -moz-animation: slide-down 2s ease-in;
+    -webkit-animation: slide-down 2s ease-out;
+    -moz-animation: slide-down 2s ease-out;
+}
+@-webkit-keyframes slide-down{
+    0% {opacity: 0};
+    25% {opacity: 1};
+}
+.menu-filter {
+    
+    // padding: $pd-left-right;
+    margin: 0 auto;
+    max-width: 1280px;
+    width: 100%;
+    padding-top: 14rem;
+    &__category {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 3.2rem;
+        padding-left: 3rem;
+        li {
+            list-style: none;
+            cursor: pointer;
+        }
+        .h4heading {
+            @include descText;
+            &:first-child {
+                color: #fff;
+            }
+            &:hover {
+                color: $clr-clone-project;
+            }
+        }
+        
+    }
+    @media (max-width: 740px) {
+        padding-top: 6.4rem;
+    }
+}
+
+// menu bottom
+
+.menu-bottom-list {
+    display: grid;
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 8rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 3.2rem;
+    &__card {
+        display: grid;
+        grid-template-columns: 1fr;
+        list-style-type: none;
+        .menu-img {
+            // display: grid;
+            max-width: 100%;
+            // width: 100%;
+            img {
+                object-fit: cover;
+                width: 100%;
+
+            }
+        }
+        .menu-content {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            background: #1F1D21;
+            width: 100%;
+            padding: 2.4rem 2.4rem 2.4rem 3.2rem;
+            justify-content: space-between;
+            .h4heading {
+                opacity: 0.87;
+            }
+        }
+    }
+    @media (max-width: 1024px) {
+        grid-template-columns: 1fr 1fr;
+        
+    }
+    @media (max-width: 740px) {
+        grid-template-columns: 1fr;
+    }
+        
+    
+}

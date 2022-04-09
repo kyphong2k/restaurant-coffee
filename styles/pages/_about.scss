@@ -1,0 +1,261 @@
+@use "../abstracts" as *;
+
+.know-more-about{
+    
+    &__left {
+        padding-bottom: 8rem;
+        .feature {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            margin-top: 4rem;
+            column-gap: 3.2rem;
+            &__card {
+                &-title {
+                    display: inline-block;
+                    font-family: 'Poppins';
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 24px;
+                    line-height: 36px;
+                    color: #C4E4EA;
+                }
+                p {
+                    @include descText;
+                }
+                &-desc {
+                    margin-top: 1.5rem;
+                    @include descText;
+                }
+            }
+            
+
+        }
+
+    }
+    &__right {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 6.5rem;
+        .box-img-1{
+            display: flex;
+            width: 100%;
+            align-items: flex-end;
+            justify-content: center;
+        }
+        .box-img-2{
+            display: flex;
+            width: 100%;
+            align-items: flex-start;
+            justify-content: center;
+        }
+    }
+    @media (max-width:1024px) {
+        &__left {
+            .feature {
+                grid-template-columns: 1fr 1fr;
+                row-gap: 3.2rem;
+            }
+        }
+    }
+    @media (max-width: 740px) {
+        &__left {
+            .feature {
+                grid-template-columns: 1fr;
+            }
+        }
+        &__right {
+            display: flex;
+            flex-flow: column;
+            gap: 3.2rem;
+            .box-img-1 {
+                img {
+                    width: 100%;
+                    object-fit: cover;
+                    height: 40rem;
+
+                }
+            }
+            .box-img-2 {
+                img {
+                    width: 100%;
+                    object-fit: cover;
+                    height: 40rem;
+
+                }
+            }
+        }
+    }
+}
+
+//banner
+
+.banner {
+    padding-top: 16rem;
+    margin: 0 auto;
+    max-width: 1280px;
+    width: 100%;
+    
+    &-img {
+        position: relative;
+        width: 100%;
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0 ;
+            left: 0;
+            right: 0;
+            background: linear-gradient(97.28deg, rgba(25, 22, 27, 0.92) 34.6%, rgba(25, 22, 27, 0) 83.17%);
+        }
+       img {
+           max-width: 100%;
+           object-fit: cover;
+       }
+       &__content {
+           position: absolute;
+           z-index: 2;
+           padding-left: 2.4rem;
+           top: 50%;
+           transform: translateY(-50%);
+           h2 {
+               span {
+                   color: $clr-clone-project;
+               }
+               margin-top: 0;
+           }
+           .paragraph {
+               margin-top: 2.4rem;  
+               @include descText;
+           }
+       }
+    }
+    @media (max-width: 740px) {
+        &-img {
+            height: 40rem;
+            img {
+                height: 40rem;
+            }
+        }
+    }
+    @media (max-width: 520px) {
+        &-img {
+            &__content {
+                padding-left:1.2rem;
+                text-shadow: 2px 2px #161616;
+                h2 {
+                    font-size: 3.6rem;
+                }
+                p {
+                    font-size: 1.4rem;
+                    
+                }
+            }
+
+        }
+    }
+}
+
+// our history
+
+.our-history {
+    // margin: $pd-left-right;
+    margin: 0 auto;
+    max-width: 1280px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.03);
+    &__content {
+        padding: 8rem;
+        display: flex;
+        flex-direction: column;
+        gap: 7rem;
+        h3 {
+            margin-top: 0;
+        }
+        &-card {
+            display: grid;
+            
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            column-gap: 4rem;
+            border-top: 2px dashed rgba(255, 255, 255, 0.15);
+            .card-item {
+                position: relative;
+                padding-top: 3.4rem;
+                display: flex;
+                flex-direction: column;
+                gap: 1.6rem;
+                .year-text {
+                    font-family: 'Poppins';
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: 32px;
+                    line-height: 44px;
+                    color: #FFFFFF;
+                }
+                .paragraph {
+                    @include descText;
+                }
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: -4px;
+                    width:4.6rem;
+                    height: 0.3rem;
+                    background-color: $clr-clone-project;
+                }
+                
+            }
+        }
+    }
+    @media (max-width: 1024px) {
+        &__content {
+            &-card {
+                grid-template-columns: 1fr 1fr;
+                row-gap: 3.2rem;
+                border: none;
+            }
+        }
+    }
+    @media (max-width: 740px) {
+        &__content {
+            &-card {
+                grid-template-columns: 1fr;
+                border: none;
+                .card-item {
+                    &::before{
+                        // display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// open letter 
+
+.open-letter {
+    // padding: $pd-left-right;
+    margin: 0 auto;
+    max-width: 1280px;
+    width: 100%;
+    padding-top: $mt-top;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 16rem;
+    &__right {
+        display: flex;
+        flex-direction: column;
+        gap: 2.4rem;
+        .paragraph {
+            @include descText;
+        }
+    }
+    @media (max-width: 1024px) {
+        grid-template-columns: 1fr;
+        row-gap: 3.2rem;
+        &__right {
+            h3 {
+                margin: 1.2rem 0;
+            }
+        }
+    }
+}
